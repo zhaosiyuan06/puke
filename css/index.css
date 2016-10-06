@@ -1,0 +1,151 @@
+.scene{
+	width: 1050px;
+	height: 600px;	
+	background: url(../image/o.jpg);
+	background-size:100%;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top:0px;
+	bottom:0px;
+	margin: auto;
+}
+.you{
+	width:150px;
+	height: 100%;
+	float: right;
+}
+.pai{
+	width: 120px;
+	height: 168px;
+	border:1px solid black;
+
+	float:left;
+	background-size:120px 168px;
+	position: absolute;
+	top:0px;
+	left:500px;
+}
+.scene .move_left,.scene .move_right{
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	background: rgba(255,255,255,1);
+	border-radius: 10px;
+	box-shadow: -3px -3px #ccc;
+	position: absolute;
+	left: 400px;
+	bottom: 20px;
+}
+.scene .move_right{
+	bottom: 80px;
+}
+.scene .move_right:active{
+	background: #ccc;
+}
+.scene .move_left:active{
+	background: #ccc;
+}
+.start{
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	background: rgba(255,255,255,1);
+	border-radius: 10px;
+	box-shadow: -3px -3px #ccc;
+
+	margin: 20px 30px;
+}
+.over1{
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	background: rgba(255,255,255,1);
+	border-radius: 10px;
+	box-shadow: -3px -3px #ccc;
+	margin: 40px 30px;
+}
+.pro{
+
+	width:300px;
+	height: 200px;
+	background:#fff;
+	/*border: 5px solid pink;*/
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom:0px;
+	margin: auto;
+	border-radius: 10px;
+	box-shadow: -5px -5px #f5f5f5;
+
+}
+.kaishi{
+	font-size: 30px;
+	line-height: 40px;
+	text-align: center;
+	color: blue;
+	margin-top: 20px;
+	background: rgba(255,255,255,0.8);
+}
+.yes,.no{
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	box-shadow: 3px 3px #ccc;
+	margin-top: 40px;
+	float: left;
+	margin-left: 30px;
+	text-decoration: none;
+}
+.yes:active{
+	border: 1px solid blue;
+}
+.defen{
+	float:left;
+	color:#fff;
+	font-size: 20px;
+	line-height: 40px;
+	margin-right:10px;
+}
+.score{
+	line-height: 40px;
+	text-align: center;
+	color:#333;
+	font-size: 30px;
+	margin-right:38px;
+	border-radius: 10px;
+	width: 50px;
+	height: 40px;
+	background:#fff;
+	float: right;
+	
+}
+.time{
+	margin-top: 5px;
+	line-height: 40px;
+	text-align: center;
+	color:#333;
+	font-size: 20px;
+	margin-right:38px;
+	border-radius: 10px;
+	width: 70px;
+	height: 40px;
+	background:#fff;
+	float: right;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	
+}
