@@ -1,30 +1,576 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<script src='js/jquery.js'></script>
-	<script src='js/index.js'></script>
-	<link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golf</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery.ellipsis.js"></script>
+    <script type="text/javascript" src="js/jquery.ellipsis.unobtrusive.js"></script>
 </head>
 <body>
-	<div class='scene'>
-	<div class='pro'>
-		
-			<div class='kaishi'>开始游戏？</div>
-			<a href="javascript:;"><div class="yes">yes</div></a>
-			<a href="javascipt:;"><div class="no">no</div></a>
-	</div>
-		<div class="you">
-			<div class='start'>重新开始</div>
-			<div class='over1'>结束游戏</div>
-			<div class="defen">得分:</div>
-			<div class="score">0</div>
-		</div>
-		<div class="time">00:00</div>
+<!--顶部导航-->
+<div class="leader_module">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Golf</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#" class="selected">首页</a></li>
+                        <li><a href="product.html">产品</a></li>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="forum.html">论坛</a></li>
+                        <li><a href="#">场馆方入口</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="loginin"><a href="#">注册</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">个人空间<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="information.html">我的资料</a></li>
+                                <li><a href="#">我的订单</a></li>
+                                <li><a href="#">消息</a></li>
+                                <li role="separator" class="divider">群消息</li>
+                                <li><a href="#" style="color: #6CB670">Vip服务</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</div>
+<!--轮播-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-hash="slide1">
+            <img src="image/banner1.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+        <div class="swiper-slide" data-hash="slide2">
+            <img src="image/banner2.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+        <div class="swiper-slide" data-hash="slide3">
+            <img src="image/banner3.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+        <div class="swiper-slide" data-hash="slide4">
+            <img src="image/banner4.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+        <div class="swiper-slide" data-hash="slide5">
+            <img src="image/banner5.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+        <div class="swiper-slide" data-hash="slide6">
+            <img src="image/banner6.jpg" alt="">
+            <div class="zhe_Black"></div>
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<!--内容开始-->
+<!--产品宣传-->
+<div class="golf_container">
+    <div class="container">
+        <h3>我们的<span>优势</span></h3>
+        <div class="border"></div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="img-box"><img src="image/g1.jpg" alt=""></div>
+                <h4>三大优势</h4>
+                <p>一、独家专利产品：体现在“自动提示挥杆的正确与错误”功能，是高尔夫运动有史600多年以来首个出现，可在训练中及时自动提示全挥杆各位置正确与错误。颠覆目前所有同类产品，具有质的改变。</p>
+                <p>二、共享教学专利：全球首创标准挥杆教学法，快速掌握挥杆要领!</p>
+                <p>三、创新盈利模式：十八洞俱乐部会员教学全免费，标准挥杆轻松学！</p>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="img-box"><img src="image/g2.jpg" alt=""></div>
+                <h4>三大优势</h4>
+                <p>一、独家专利产品：体现在“自动提示挥杆的正确与错误”功能，是高尔夫运动有史600多年以来首个出现，可在训练中及时自动提示全挥杆各位置正确与错误。颠覆目前所有同类产品，具有质的改变。</p>
+                <p>二、共享教学专利：全球首创标准挥杆教学法，快速掌握挥杆要领!</p>
+                <p>三、创新盈利模式：十八洞俱乐部会员教学全免费，标准挥杆轻松学！</p>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="img-box"><img src="image/g4.jpg" alt=""></div>
+                <h4>三大优势</h4>
+                <p>一、独家专利产品：体现在“自动提示挥杆的正确与错误”功能，是高尔夫运动有史600多年以来首个出现，可在训练中及时自动提示全挥杆各位置正确与错误。颠覆目前所有同类产品，具有质的改变。</p>
+                <p>二、共享教学专利：全球首创标准挥杆教学法，快速掌握挥杆要领!</p>
+                <p>三、创新盈利模式：十八洞俱乐部会员教学全免费，标准挥杆轻松学！</p>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="counter" class="parallax-section">
+    <div class="container">
+        <div class="row">
 
-		<div class="move_left">向左</div>
-		<div class="move_right">向右</div>
-	</div>
+            <!-- first count item -->
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
+                <div class="counters-item">
+                    <div>
+                        <span data-speed="3000" data-to="320">320</span>
+                    </div>
+                    <i class="fa fa-users fa-3x"></i>
+                    <h3>Happy Clients</h3>
+                </div>
+            </div>
+            <!-- end first count item -->
+
+            <!-- second count item -->
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+                 data-wow-delay="200ms">
+                <div class="counters-item">
+                    <div>
+                        <span data-speed="3000" data-to="565">565</span>
+                    </div>
+                    <i class="fa fa-check-square fa-3x"></i>
+                    <h3>Projects completed</h3>
+                </div>
+            </div>
+            <!-- end second count item -->
+
+            <!-- third count item -->
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+                 data-wow-delay="400ms">
+                <div class="counters-item">
+                    <div>
+                        <span data-speed="3000" data-to="95">95</span>
+                        <span>%</span>
+                    </div>
+                    <i class="fa fa-thumbs-up fa-3x"></i>
+                    <h3>Positive feedback</h3>
+
+                </div>
+            </div>
+            <!-- end third count item -->
+
+            <!-- fourth count item -->
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+                 data-wow-delay="600ms">
+                <div class="counters-item kill-margin-bottom">
+                    <div>
+                        <span data-speed="3000" data-to="2500">2500</span>
+                    </div>
+                    <i class="fa fa-coffee fa-3x"></i>
+                    <h3>Cups of Coffee</h3>
+                </div>
+            </div>
+            <!-- end fourth count item -->
+
+        </div>        <!-- end row -->
+    </div>    <!-- end container -->
+</section>
+<!--产品购买-->
+<div class="golf_sell">
+    <div class="container">
+        <h3>我们的<span>产品</span></h3>
+        <div class="border"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#">
+                    <div class="zhe1">
+                        <img src="image/open.png" alt="">
+                    </div>
+                    <img src="image/g4.jpg" alt="">
+                </a>
+                <h4>高尔夫产品名称</h4>
+                <p>这款高尔夫球的训练器材的外包装基本定了尺寸大小，30*18*120，铝合金轮毂外包装，可以随身携带，高尔夫球爱好者可以把这款训练器材放在汽车的后背箱里带到高尔夫球的练习场，非常方便。</p>
+                <p>本产品分为教练版本与个人版本。本公司是这一运动器材的华北地区代理商。华北地区的高尔夫球爱好者可以向本公司购买这一器材，有购买意向者，请登录注册或者联系网站客服。</p></p>
+            </div>
+            <div class="col-md-8">
+                <div class="video_box">
+                    <img src="image/g1.jpg" alt="" class="play" style="margin: 0 auto">
+                    <div class="zhe2"><span class="backgroundImage" src-data="videos/1-1.mp4"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--播放界面-->
+<div class="video_zhezhao">
+    <img src="image/close.png" alt="">
+    <div class="videoplay_Box">
+        <video src="" controls="controls" width="100%" height="100%" class="video"></video>
+    </div>
+</div>
+<!--新闻资讯-->
+<div class="golf_news">
+    <div class="container">
+        <h3>相关<span>资讯</span></h3>
+        <div class="border"></div>
+        <div class="row">
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <a href="https://www.baidu.com/">
+                        <div class="a">
+                            <img src="image/g1.jpg" alt="">
+                            <h4>新闻资讯1</h4>
+                            <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="news_box">
+                    <div class="a">
+                        <img src="image/g1.jpg" alt="">
+                        <h4>新闻资讯1</h4>
+                        <p>《标准挥杆科学教学法》等系列发明专利已在中国、美国、日本获得发明专利并授权。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<section id="counter1" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+        </div>        <!-- end row -->
+    </div>    <!-- end container -->
+</section>
+<div class="post_module">
+    <div class="container">
+        <h3>热门<span>帖子</span></h3>
+        <div class="border"></div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p_box">
+                    <div class="col-md-3">
+                        <img src="image/head.jpg" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <span>GavinHsueh</span>
+                        <h4>span标签里的内容过长如何设置自动换行</h4>
+                        <a href="https://www.baidu.com/"><p data-ellipsis="true" data-ellipsis-max-width="200"
+                                                            data-ellipsis-max-line="2"
+                                                            class="two">span标签是被用来组合文档中的行内元素。span
+                            没有固定的格式表现。当对它应用样式时，它会产生视觉上的变化。当内容过长时，我们可以通过overflow:
+                            hidden;设置隐藏溢出部分，但有的应用场景下我们希望内容能够自动换行，比如商城的产品信息展示里的产品名称。</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--登录-->
+<div class="demo form-bg login" style="padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <span class="cancel">取消登录</span>
+                    <span class="heading">登录Golf</span>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="用户名或电子邮件">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="密　码">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <div class="main-checkbox">
+                            <input type="checkbox" value="None" id="checkbox1" name="check"/>
+                            <label for="checkbox1"></label>
+                        </div>
+                        <span class="text">Remember me</span>
+                        <button type="submit" class="btn btn-default">登录</button>
+                    </div>
+                    <div class="login_three">
+                        <span class="login_text">社交账号登录：</span>
+                        <span class="weixin"></span>
+                        <span class="qq"></span>
+                        <span class="weibo"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--注册-->
+<div class="demo form-bg register" style="padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <span class="cancel">取消注册</span>
+                    <span class="heading">注册Golf</span>
+                    <div class="form-group">
+                        <input type="email" class="form-control"  placeholder="用户名或电子邮件">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control"  placeholder="密　码">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <!--<div class="main-checkbox">-->
+                            <!--<input type="checkbox" value="None"  name="check"/>-->
+                            <!--<label for="checkbox1"></label>-->
+                        <!--</div>-->
+                        <!--<span class="text">Remember me</span>-->
+                        <button type="submit" class="btn btn-default">注册</button>
+                    </div>
+                    <div class="login_three">
+                        <span class="login_text">社交账号登录：</span>
+                        <span class="weixin"></span>
+                        <span class="qq"></span>
+                        <span class="weibo"></span>
+                    </div>
+                    <div>
+                        <span class="login_register">已有账号？直接登录</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">北京市丰台区丰台北路32号院华胜写字楼A座107<br>
+                Copyright © 2012-2017 北京华诚兴业软件开发有限责任公司,京ICP备17057156
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!--内容结束-->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        hashNavigation: {
+            watchState: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
 </body>
 </html>

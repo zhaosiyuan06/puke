@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Golf论坛发帖</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <!--smiditor-->
+    <link rel="stylesheet" type="text/css" href="css/simditor/simditor.css" />
+    <script type="text/javascript" src="js/simditor/module.js"></script>
+    <script type="text/javascript" src="js/simditor/hotkeys.js"></script>
+    <script type="text/javascript" src="js/simditor/uploader.js"></script>
+    <script type="text/javascript" src="js/simditor/simditor.js"></script>
+</head>
+<body>
+<!--顶部导航-->
+<div class="leader_module">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Golf</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="product.html">产品</a></li>
+                        <li class="active"><a href="forum.html" class="selected">论坛</a></li>
+                        <li><a href="#">场馆方入口</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="loginin"><a href="#">注册</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">个人空间<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="information.html">我的资料</a></li>
+                                <li><a href="#">我的订单</a></li>
+                                <li><a href="#">消息</a></li>
+                                <li role="separator" class="divider">群消息</li>
+                                <li><a href="#" style="color: #6CB670">Vip服务</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</div>
+<!--内容开始-->
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <span class="new_post"><a href="forum_main.html">返回</a></span>
+            <span class="reload">发新帖</span>
+        </div>
+        <div class="row post">
+            <span class="posts">发表帖子</span>
+            <textarea name="title_boxs"  style="width: 100%;height: 40px;text-align: center;border: 1px solid #ccc"></textarea>
+            <span class="post_font">最多输入30个字符</span>
+            <textarea id="editor" placeholder="发帖..." autofocus maxlength="200"></textarea>
+            <span class="post_font">最多可输入200个字符</span>
+        </div>
+        <div class="row pager">123</div>
+        <div class="row bottom"></div>
+    </div>
+
+</div>
+<!--登录-->
+<div class="demo form-bg login" style="padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <span class="cancel">取消登录</span>
+                    <span class="heading">登录Golf</span>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="用户名或电子邮件">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="密　码">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <div class="main-checkbox">
+                            <input type="checkbox" value="None" id="checkbox1" name="check"/>
+                            <label for="checkbox1"></label>
+                        </div>
+                        <span class="text">Remember me</span>
+                        <button type="submit" class="btn btn-default">登录</button>
+                    </div>
+                    <div class="login_three">
+                        <span class="login_text">社交账号登录：</span>
+                        <span class="weixin"></span>
+                        <span class="qq"></span>
+                        <span class="weibo"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--注册-->
+<div class="demo form-bg register" style="padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <span class="cancel">取消注册</span>
+                    <span class="heading">注册Golf</span>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="用户名或电子邮件">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" placeholder="密　码">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <!--<div class="main-checkbox">-->
+                        <!--<input type="checkbox" value="None"  name="check"/>-->
+                        <!--<label for="checkbox1"></label>-->
+                        <!--</div>-->
+                        <!--<span class="text">Remember me</span>-->
+                        <button type="submit" class="btn btn-default">注册</button>
+                    </div>
+                    <div class="login_three">
+                        <span class="login_text">社交账号登录：</span>
+                        <span class="weixin"></span>
+                        <span class="qq"></span>
+                        <span class="weibo"></span>
+                    </div>
+                    <div>
+                        <span class="login_register">已有账号？直接登录</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">北京市丰台区丰台北路32号院华胜写字楼A座107<br>
+                Copyright © 2012-2017 北京华诚兴业软件开发有限责任公司,京ICP备17057156
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!--内容结束-->
+<script>
+    var editor = new Simditor({
+        textarea: $('#editor')
+        //optional options
+    });
+</script>
+</body>
+</html>

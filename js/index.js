@@ -1,250 +1,117 @@
-$(function(){
-	function makePoker(){
-		var poker=[];
-		var colors=['h','s','c','d'];
-		var table={};
-		while(poker.length!=52){
-			var n=Math.ceil(Math.random()*13)
-			var c=colors[Math.floor(Math.random()*4)]
-			var v={color:c,
-					number:n}
-			if(!table[c+n]){
-				table[c+n]=true;
-				poker.push(v)
+$(function () {
+    //视屏播放
+    $(".backgroundImage").on("click", function () {
+        var imgSrc = $(this).attr("src-data")
+        $(".video_zhezhao .videoplay_Box video").attr("src", imgSrc);
+        $(".video_zhezhao .videoplay_Box video")[0].play();
+        $(".video_zhezhao").css("display", "block")
+    })
+    $(".video_zhezhao img").on("click", function () {
+        $(".video_zhezhao .videoplay_Box video")[0].pause();
+        $(".video_zhezhao").css("display", "none")
+    })
+    //相关资讯鼠标经过样式
+    $(".golf_news .col-md-2  .news_box").on("mouseenter", function () {
+        $(this).css("margin-top", "-20px")
+    })
+    $(".golf_news .col-md-2  .news_box").on("mouseleave", function () {
+        $(this).css("margin-top", "0px")
+    })
+    //注册
+    $("#loginin").on("click", function () {
+        $(".register").css("display", "block")
+        $(".register .form-horizontal").addClass("down")
+    })
+    $(".register .cancel").on("click", function () {
+        $(".register").css("display", "none")
+        $(".register .form-horizontal").removeClass("down")
+    })
+    //登录
+    $(".login_register").on("click", function () {
+        $(".register").css("display", "none")
+        $(".login").css("display", "block")
+        $(".register .form-horizontal").removeClass("down")
+        $(".login .form-horizontal").addClass("down")
+    })
+    $(".login .cancel").on("click", function () {
+        $(".login").css("display", "none")
+        $(".login .form-horizontal").removeClass("down")
+    })
+//    点赞
+    $(".content .container .new").on("click", function () {
+        if ($(this).hasClass("news")) {
+            $(this).removeClass("news")
+        } else {
+            $(this).addClass("news")
+        }
+    })
 
-			}
-			}return poker;
-	}
-	var poker=makePoker();
+    // 产品数量加减
+    $(".num1").on("click", function () {
+        var n = $(this).next().val();
+        var num = parseInt(n) - 1;
+        if (num == 0) {
+            return
+        }
+        $(this).next().val(num);
+    })
+    $(".num2").on("click", function () {
+        var n = $(this).prev().val();
+        var num = parseInt(n) + 1;
+        if (num == 0) {
+            return;
+        }
+        $(this).prev().val(num);
+    })
 
-	function setPoker(poker){
-		var dict={1:'A',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'T',11:'J',12:'Q',13:'K'}
-		var index=0;
-		for(var i=0,poke;i<7;i++){
-			for(var j=0;j<i+1;j++){
-				poke=poker[index]
-				index+=1;
+    //订单确认
+    function address() {
+        var parer = $(".content_address .container .row .col-md-4 .addressed p").html()
+        var people = $(".content_address .container .row .col-md-4 .addressed .man").html()
+        // alert(people)
+        var tel = $(".content_address .container .row .col-md-4 .addressed .tel").html()
+        // alert(tel)
+        $(".submit_box .container .col-md-12 .col-md-8 p").html(parer)
+        $(".submit_box .container .col-md-12 .col-md-8 .names").html(people)
+        $(".submit_box .container .col-md-12 .col-md-8 .tels").html(tel)
+    }
 
-			$('<div>').addClass('pai')
-						.attr('data_number',poke.number)
-						.attr('id',i+'_'+j)
-						.css('background-image','url(./image/'+dict[poke.number]+poke.color+'.png)')
-						.appendTo('.scene')
-						.delay(index*30)
-						.animate({
-							top:i*40,
-							left:(6-i)*40+j*130
-						})
-			}		
-		}
-		for(var v;index<poker.length;index++){
-			v=poker[index]
-			$('<div>').addClass('pai left')
-					.attr('data_number',v.number)
-					// .attr('id',i+'_'+j)
-					.css('background-image','url(./image/'+dict[v.number]+v.color+'.png)')
-					.appendTo('.scene')
-					.delay(index*30)
-					.animate({
-						top:410,
-						left:190
-					})
-		}
-	
-	}
-	// setPoker(poker)
-	
-//弹窗
+    address()
 
-	var s=0;
-	var m=0;
-	var f=0;
-	var x=0;
-		$('.move_left').css({opacity:0})
-		$('.move_right').css({opacity:0})
-		$('.start').css({opacity:0})
-		$('.over1').css({opacity:0})
-		$('.score').css({opacity:0})
-		$('.time').css({opacity:0})
-		$('.defen').css({opacity:0})
+    //默认地址选定
+    $(".content_address .col-md-4").on("click", function () {
+        $(".content_address .col-md-4 .box_order").removeClass("addressed")
+        $(this).children(".box_orders").addClass("addressed")
+        address()
+    })
 
-	$('.yes').on('click',function(){
-		$('.move_left').css({opacity:1})
-		$('.move_right').css({opacity:1})
-		$('.start').css({opacity:1})
-		$('.over1').css({opacity:1})
-		$('.score').css({opacity:1})
-		$('.time').css({opacity:1})
-		$('.defen').css({opacity:1})
-
-		$('.pro').animate({opacity:0})
-		setPoker(poker)
-			t=setInterval(function(){
-				s+=1;
-				if(s>9){s=0;m+=1;}
-				if(m>5){m=0;f+=1;}
-				if(f>9){f=0;x+=1;}
-				$(".time").text(""+x+f+":"+""+m+s+"")
-			},1000)
-	})
-	$('.yes').on('click',false)
-
-	$('.no').on('click',function(){
-
-		$('.start').css({opacity:1})
-		$('.over1').css({opacity:1})
-		$('.score').css({opacity:1})
-		$('.time').css({opacity:1})
-		$('.defen').css({opacity:1})
-
-		$('.pro').animate({opacity:0})
-		return
-	})
-	$('.no').on('click',false)
-	
-	var score;
-	$('.start').on('click',function(){
-		$('.move_left').css({opacity:1})
-		$('.move_right').css({opacity:1})
-		$('.pai').remove()
-		setPoker(poker)
-		score=0;
-		$('.score').text(score)
-		// $(".time").text(" "+0+0+" :  "+0+0+" ")
-		clearInterval(t)
-			var s=0;
-			var m=0;
-			var f=0;
-			var x=0;
-			t=setInterval(function(){
-				s+=1;
-				if(s>9){s=0;m+=1;}
-				if(m>5){m=0;f+=1;}
-				if(f>9){f=0;x+=1;}
-				$(".time").text(""+x+f+":"+m+s+"")
-			},1000)
-	
-	})
-	
-//向右移动
-	var moveRight=$('.scene .move_right')
-	var zIndex=1;
-	moveRight.on('click',function(){
-		if($('.left').length){
-			$('.left').last()
-						.css('z-index',zIndex++)
-						.animate({left:690})
-						.queue(function(){
-							$(this).dequeue()
-							.removeClass('left')
-							.addClass('right')
-						})
-		}
-		
-	})
-	moveRight.on('mousedown',false)
-//向左移动
-	var moveLeft=$('.scene .move_left')
-	var number=0;
-	moveLeft.on('click',function(){
-		number++;
-		if(number>3){
-			alert('移动次数已经达到上限次数')
-			return;
-			
-		}
-		if($('.left').length){return}
-		$('.right').each(function(i,v){
-			$(this)
-				.delay(i*130)
-				.css('z-index',0)
-				.animate({left:190})
-		})
-		.queue(function(){
-			$(this).dequeue()
-			.removeClass('right')
-			.addClass('left')
-		})
-	})
-
-	moveLeft.on('mousedown',false)
-//运算
-	function getNumber(el){
-		return parseInt($(el).attr('data_number'))
-	}
-	function isCanClick(el){
-		var x=parseInt($(el).attr('id').split('_')[0]);
-		var y=parseInt($(el).attr('id').split('_')[1]);
-		if($('#'+(x+1)+'_'+y).length || $('#'+(x+1)+'_'+(y+1)).length){
-			return false;
-		}else{
-			return true;
-		}
-	}
+    //总额
+    var sum = 0;
+    $(".order_information .shop_order").each(function () {
+        var add = parseFloat($(".money").html());
+        sum = parseFloat(sum) + add;
+        $(".submit_box .total").html(parseFloat(sum));
+    })
+//    新增工作地址
+    $(".content_address .new_add,.address_table .right").on("click",function(){
+        $(".new_address_box").css("display","block")
+    })
+    $(".close_box").on("click",function(){
+        $(".new_address_box").css("display","none")
+    })
 
 
-	var prev=null;var score=0;
-	$('.scene').on('click','.pai',function(){
-		var num=parseInt($(this).attr('data_number'))
+//   信息确认页面选项卡
+    $(".bottom_infor ul li").on("click",function(){
 
-		if($(this).attr('id')&& !isCanClick(this)){
-			return;
-		}
-		$(this).css({'border':'5px solid red'})
-		$(this).animate({marginTop:20})
-		
-		//如果是13，直接消除，函数返回；
-		if(num===13){
-			score+=10;
-			var s=$('.score').text(score)
-			$('.over1').on('click',function(){
-				// alert('成绩还不错哦！'+score+'分')
-				clearInterval(t)
-				$('.pai').detach()
-				$('.move_left').css({opacity:0})
-				$('.move_right').css({opacity:0})
-
-			})
-			$('.over1').on('click',false)
-			$(this).animate({top:0,left:700})
-					.queue(function(){
-						$(this).detach().dequeue();
-					})
-					return;
-		}
-		if(prev){
-			if(getNumber(prev)+getNumber(this)===13){
-			score+=10;
-			var s=$('.score').text(score)
-			if(score==280){
-			alert('过关了！')
-			}
-			$('.over1').on('click',function(){
-				// alert('成绩还不错哦！'+score+'分')
-				clearInterval(t)
-				$('.pai').detach()
-				$('.move_left').css({opacity:0})
-				$('.move_right').css({opacity:0})
-
-			// return
-			})
-			$('.over').on('click',false)
-				prev.add(this).animate({
-					top:0,
-					left:700
-				}).queue(function(){
-						$(this).detach().dequeue();
-					})
-			}else{
-				prev.add(this).css({'border':'0px'})
-				prev.add(this).animate({marginTop:0})
-			}prev=null;
-
-		}else{prev=$(this)}
-
-	})
-	$('.over1').on('click',function(){
-		alert("成绩还不错哦!"+$('.score').text()+'分')
-	})
-
+        var index = $(this).index();
+        $(".infor_container>ul").eq(index).show().siblings().hide();
+    })
+//    修改个人信息
+    $(".resert").on("click",function () {
+        $(".col-md-9 .infor_container ul").css("display","none")
+        $(".wan_infor").css("display","block")
+    })
 })
+
+
